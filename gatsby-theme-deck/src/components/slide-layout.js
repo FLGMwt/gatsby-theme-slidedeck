@@ -1,35 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 
-const incrementPageNumber = delta => {
-  const pathParts = document.location.pathname.split('/');
-  const path = pathParts.slice(0, -1);
-  const pageNumber = pathParts.slice(-1);
-  window.location = [...path, Number(pageNumber) + delta].join('/');
-};
+import useShortcuts from '../utils/useShortcuts';
 
 export default function PageTemplate({ data: { mdx } }) {
-  const { frontmatter, body } = mdx;
+  const { frontmatter, body, fields } = mdx;
   const { title, slideNumber, lastSlide } = frontmatter;
-  useEffect(() => {
-    document.addEventListener('keydown', e => {
-      console.log(e);
+  const { deckSlug } = fields;
 
-      if (
-        slideNumber !== lastSlide &&
-        ['KeyL', 'ArrowRight', 'ArrowDown'].includes(e.code)
-      ) {
-        incrementPageNumber(1);
-      }
-      if (
-        slideNumber !== 1 &&
-        ['KeyH', 'ArrowLeft', 'ArrowUp'].includes(e.code)
-      ) {
-        incrementPageNumber(-1);
-      }
-    });
-  }, []);
+  useShortcuts({ deckSlug, slideNumber, lastSlide });
+
   return (
     <div>
       <h1>
@@ -41,13 +22,16 @@ export default function PageTemplate({ data: { mdx } }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostQuery($id: String) {
+  query SideQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
       frontmatter {
         title
         slideNumber
         lastSlide
+      }
+      fields {
+        deckSlug
       }
       body
     }

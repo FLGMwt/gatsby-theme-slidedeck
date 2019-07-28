@@ -2,7 +2,7 @@
 
 `gatsby-theme-deck` generates a slide deck for each `.deck` file in the project's `deck` directory.
 
-These `.deck` files are split into multiple mdx pages using `%%%%` as a delimiter and the `.deck` file name is used as a path prefix.
+These `.deck` files are split into multiple mdx pages using `gatsby-slide` as a delimiter and the `.deck` file name is used as a path prefix.
 
 For `this-theme-is-silly.deck`, pages will be created at:
 
