@@ -1,0 +1,52 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\lib\cli.js add gatsby-theme-deck-base
+
+PATH: 
+  C:\Program Files\ConEmu\ConEmu\Scripts;C:\Program Files\ConEmu;C:\Program Files\ConEmu\ConEmu;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Users\RyanS\AppData\Local\Microsoft\WindowsApps;C:\Users\RyanS\.dotnet\tools;C:\Program Files\Amazon\AWSCLI\bin\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\PowerShell\6\;C:\Users\RyanS\AppData\Roaming\npm;C:\Users\RyanS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\RyanS\AppData\Local\Terraform\bin;C:\Users\RyanS\AppData\Local\Yarn\bin;C:\Users\RyanS\AppData\Local\Android\Sdk\emulator;C:\Users\RyanS\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Android\Android Studio\jre\bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/gatsby-theme-deck-base: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:65939:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140464:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141436:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141358:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1129:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "example-base",
+    "private": true,
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Ryan Stelly <ryan@verticalmade.com> (@FLGMwt)",
+    "license": "MIT",
+    "scripts": {
+      "develop": "gatsby develop",
+      "build": "gatsby build"
+    },
+    "dependencies": {
+      "gatsby": "^2.13.39",
+      "react": "^16.8.6",
+      "react-dom": "^16.8.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

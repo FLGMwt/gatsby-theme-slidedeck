@@ -1,0 +1,18 @@
+{
+  "name": "example-base",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ryan Stelly <ryan@verticalmade.com> (@FLGMwt)",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build"
+  },
+  "dependencies": {
+    "gatsby": "^2.13.39",
+    "gatsby-theme-deck-base": "1.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

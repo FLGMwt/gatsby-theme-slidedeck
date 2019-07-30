@@ -12,6 +12,8 @@
   },
   "workspaces": [
     "gatsby-theme-deck",
-    "example"
+    "example",
+    "gatsby-theme-deck-base",
+    "example-base"
   ]
 }
