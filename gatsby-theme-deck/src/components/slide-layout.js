@@ -9,10 +9,10 @@ export default function PageTemplate({ data: { mdx } }) {
   const { title, slideNumber, lastSlide } = frontmatter;
   const { deckSlug } = fields;
 
-  useShortcuts({ deckSlug, slideNumber, lastSlide });
+  const touchSwipeHandlers = useShortcuts({ deckSlug, slideNumber, lastSlide });
 
   return (
-    <div>
+    <div {...touchSwipeHandlers}>
       <h1>
         {title} - {slideNumber}
       </h1>

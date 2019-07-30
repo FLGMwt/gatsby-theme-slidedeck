@@ -13,6 +13,7 @@
     "gatsby-plugin-mdx": "^1.0.17",
     "gatsby-plugin-page-creator": "^2.1.5",
     "gatsby-source-filesystem": "^2.1.6",
-    "gray-matter": "^4.0.2"
+    "gray-matter": "^4.0.2",
+    "react-swipeable": "^5.3.0"
   }
 }
