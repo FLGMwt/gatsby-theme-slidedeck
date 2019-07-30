@@ -1,0 +1,7 @@
+/*
+    layout reset to allow full-screen touch handlers in slide-layout. prevents scrollbars
+*/
+body {
+    margin: 0;
+    padding: 0;
+}

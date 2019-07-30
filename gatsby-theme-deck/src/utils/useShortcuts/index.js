@@ -6,8 +6,11 @@ import {
   resetKeyCodes,
   homeKeyCodes,
 } from './config';
+import { useSwipeable } from 'react-swipeable';
 
 const useShortcuts = ({ deckSlug, slideNumber, lastSlide }) => {
+  const canNext = slideNumber !== lastSlide;
+  const canPrevious = slideNumber !== 1;
   useEffect(() => {
     const shortcutListener = e => {
       if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
@@ -15,10 +18,10 @@ const useShortcuts = ({ deckSlug, slideNumber, lastSlide }) => {
         return;
       }
 
-      if (nextKeyCodes.includes(e.code) && slideNumber !== lastSlide) {
+      if (nextKeyCodes.includes(e.code) && canNext) {
         nextSlide({ deckSlug, slideNumber });
       }
-      if (previousKeyCodes.includes(e.code) && slideNumber !== 1) {
+      if (previousKeyCodes.includes(e.code) && canPrevious) {
         previousSlide({ deckSlug, slideNumber });
       }
       if (resetKeyCodes.includes(e.code)) {
@@ -31,6 +34,13 @@ const useShortcuts = ({ deckSlug, slideNumber, lastSlide }) => {
     document.addEventListener('keyup', shortcutListener);
     return () => document.removeEventListener('keyup', shortcutListener);
   }, []);
+
+  return useSwipeable({
+    onSwipedLeft: () => canNext && nextSlide({ deckSlug, slideNumber }),
+    onSwipedRight: () =>
+      canPrevious && previousSlide({ deckSlug, slideNumber }),
+    preventDefaultTouchmoveEvent: true,
+  });
 };
 
 export default useShortcuts;

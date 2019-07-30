@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
+import './global.css';
 
 import useShortcuts from '../utils/useShortcuts';
 
@@ -9,10 +10,22 @@ export default function PageTemplate({ data: { mdx } }) {
   const { title, slideNumber, lastSlide } = frontmatter;
   const { deckSlug } = fields;
 
-  useShortcuts({ deckSlug, slideNumber, lastSlide });
+  const touchSwipeHandlers = useShortcuts({ deckSlug, slideNumber, lastSlide });
 
   return (
-    <div>
+    <div
+      {...touchSwipeHandlers}
+      style={{
+        // allow swipe handlers to capture full screen
+        height: '100vh',
+        width: '100vw',
+      }}
+    >
+      {/*
+        Without this, h1's margin-start nudges the 100vh container and causes a scrollbar
+        I don't know CSS too well, probably a better way to do this 😬
+      */}
+      <div style={{ height: 1 }} />
       <h1>
         {title} - {slideNumber}
       </h1>
