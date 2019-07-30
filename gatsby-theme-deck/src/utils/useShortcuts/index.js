@@ -9,6 +9,8 @@ import {
 import { useSwipeable } from 'react-swipeable';
 
 const useShortcuts = ({ deckSlug, slideNumber, lastSlide }) => {
+  const canNext = slideNumber !== lastSlide;
+  const canPrevious = slideNumber !== 1;
   useEffect(() => {
     const shortcutListener = e => {
       if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
@@ -16,10 +18,10 @@ const useShortcuts = ({ deckSlug, slideNumber, lastSlide }) => {
         return;
       }
 
-      if (nextKeyCodes.includes(e.code) && slideNumber !== lastSlide) {
+      if (nextKeyCodes.includes(e.code) && canNext) {
         nextSlide({ deckSlug, slideNumber });
       }
-      if (previousKeyCodes.includes(e.code) && slideNumber !== 1) {
+      if (previousKeyCodes.includes(e.code) && canPrevious) {
         previousSlide({ deckSlug, slideNumber });
       }
       if (resetKeyCodes.includes(e.code)) {
@@ -34,8 +36,9 @@ const useShortcuts = ({ deckSlug, slideNumber, lastSlide }) => {
   }, []);
 
   return useSwipeable({
-    onSwipedLeft: () => nextSlide({ deckSlug, slideNumber }),
-    onSwipedRight: () => previousSlide({ deckSlug, slideNumber }),
+    onSwipedLeft: () => canNext && nextSlide({ deckSlug, slideNumber }),
+    onSwipedRight: () =>
+      canPrevious && previousSlide({ deckSlug, slideNumber }),
     preventDefaultTouchmoveEvent: true,
   });
 };
