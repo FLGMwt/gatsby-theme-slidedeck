@@ -4,5 +4,6 @@ module.exports = {
       resolve: `gatsby-theme-deck-base`,
       options: {},
     },
+    'gatsby-plugin-theme-ui',
   ],
 };

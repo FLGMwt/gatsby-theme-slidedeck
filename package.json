@@ -8,6 +8,9 @@
     "develop": "yarn workspace example develop",
     "clean": "yarn workspace example gatsby clean",
     "r": "yarn clean && yarn develop",
+    "develop:base": "yarn workspace example-base develop",
+    "clean:base": "yarn workspace example-base gatsby clean",
+    "r:base": "yarn clean:base && yarn develop:base",
     "build": "yarn workspace example build"
   },
   "workspaces": [

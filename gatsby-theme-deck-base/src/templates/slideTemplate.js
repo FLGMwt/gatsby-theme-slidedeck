@@ -1,11 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
+import PageWrapper from '../components/pageWrapper';
 import './global.css';
 
 import useShortcuts from '../utils/useShortcuts';
 
-export default function PageTemplate({ data: { mdx } }) {
+const ReffablePageWrapper = React.forwardRef((props, ref) => (
+  <div ref={ref}>
+    <PageWrapper {...props} />
+  </div>
+));
+
+export default function SlideTemplate({ data: { mdx } }) {
   const { frontmatter, body, fields } = mdx;
   const { title, slideNumber, lastSlide } = frontmatter;
   const { deckSlug } = fields;
@@ -13,7 +20,7 @@ export default function PageTemplate({ data: { mdx } }) {
   const touchSwipeHandlers = useShortcuts({ deckSlug, slideNumber, lastSlide });
 
   return (
-    <div
+    <ReffablePageWrapper
       {...touchSwipeHandlers}
       style={{
         // allow swipe handlers to capture full screen
@@ -30,7 +37,7 @@ export default function PageTemplate({ data: { mdx } }) {
         {title} - {slideNumber}
       </h1>
       <MDXRenderer>{body}</MDXRenderer>
-    </div>
+    </ReffablePageWrapper>
   );
 }
 
