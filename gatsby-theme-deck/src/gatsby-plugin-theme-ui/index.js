@@ -1,5 +1,8 @@
 import { funk } from '@theme-ui/presets';
 import prism from './prism';
+import colors from './colors';
+
+console.log(funk);
 
 export default {
   ...funk,
@@ -9,5 +12,13 @@ export default {
       ...funk.styles.pre,
       ...prism,
     },
+  },
+  sizes: {
+    container: 920,
+    slideHeight: 520,
+  },
+  colors: {
+    ...funk.colors,
+    ...colors,
   },
 };

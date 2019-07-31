@@ -14,7 +14,7 @@ const useShortcuts = ({ deckSlug, slideNumber, lastSlide }) => {
   useEffect(() => {
     const shortcutListener = e => {
       if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
-        // don't want to muck with browser shortcuts (ALT+left, CTRL/meta + R)
+        // don't want to muck with browser shortcuts (ALT + left, CTRL/meta + R)
         return;
       }
 
@@ -40,6 +40,7 @@ const useShortcuts = ({ deckSlug, slideNumber, lastSlide }) => {
     onSwipedRight: () =>
       canPrevious && previousSlide({ deckSlug, slideNumber }),
     preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
   });
 };
 
