@@ -1,4 +1,4 @@
-export const nextKeyCodes = ['KeyL', 'ArrowRight', 'ArrowDown'];
-export const previousKeyCodes = ['KeyH', 'ArrowLeft', 'ArrowUp'];
+export const nextKeyCodes = ['KeyL', 'ArrowRight'];
+export const previousKeyCodes = ['KeyH', 'ArrowLeft'];
 export const resetKeyCodes = ['KeyR'];
 export const homeKeyCodes = ['KeyQ'];
