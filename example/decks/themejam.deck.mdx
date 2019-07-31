@@ -1,0 +1,80 @@
+---
+title: Theme Jam
+---
+import DeckTitle from 'gatsby-theme-slidedeck/src/components/deckTitle';
+
+<DeckTitle title="gatsby-theme-slidedeck" subtitle="Slide decks w/ mdx + Gatsby" />
+
+gatsby-slide
+
+# What This Is
+
+This presentation is served as a gatsby site using slides generated from Markdown (mdx specifically).
+
+Sites using `gatsby-theme-slidedeck` can add a `.deck.mdx` file to the `decks` directory such as the following, with the string `gatby-slide` on its own line to separate slides:
+
+```md
+<!-- decks/my-fancy-presentation.deck.mdx -->
+# What I have to say and why I say it
+
+1. acquire cats
+2. acquire neckties
+3. put neckties on the cats
+4. profit
+
+gatsby-slide (or any slide delimeter you configure)
+
+# This is on a new slide
+
+Look at me!
+```
+
+gatsby-slide
+
+# Getting Started
+
+Create a new gatsby site using the `gatsby-starter-slidedeck-theme` starter:
+
+```sh
+gatsby new my-slidedeck-site https://github.com/FLGMwt/gatsby-starter-slidedeck-theme
+cd my-slidedeck-site
+npm run develop # or yarn develop
+```
+
+## What's Inside?
+
+When you use the `gatsby-starter-slidedeck-theme` starter, you'll end up with a:
+
+- gastby side configured to use `gatsby-theme-slidedeck`
+- `decks` directory with a starter slide deck
+
+That's it! You can edit the template slide deck or create decks of your own.
+
+gatsby-slide
+
+# What Can I Change?
+
+Since `gatsby-theme-slidedeck` is a [Gatsby Theme](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes/), sites that use it have the power to customize almost everything.
+
+For example, if you don't want the slide header to appear, shadow it by creating a overriding shadow component in your project that renders nothing:
+
+```jsx
+// src/gatsby-theme-slidedeck/componets/slideHeader.js
+export default () => null;
+```
+
+gatsby-slide
+
+# How Does It Work?
+
+This theme is influenced by `gatsby-theme-blog` which leverages `gatsby-plugin-mdx` to generate pages from mdx.
+
+Instead of creating pages for each .mdx file, `gatsby-theme-slidedeck` intercepts mdx file nodes as they're created, splits their content on the slide delimeter ('gatsby-slide` by default), then creates new file nodes slide.
+
+The `gatsby-mdx-plugin` picks these up to render the markdown into markup, which we then create pages from.
+
+gatsby-slide
+
+import { default as DeckEnd } from 'gatsby-theme-slidedeck/src/components/deckTitle';
+
+<DeckEnd title="Thanks for looking!" />

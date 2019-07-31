@@ -4,11 +4,37 @@ const {
   createFileNodeFromBuffer,
 } = require('gatsby-source-filesystem');
 const grayMatter = require('gray-matter');
+const fs = require('fs');
 
 const SlideTemplate = require.resolve(`./src/templates/slide`);
 
+const deckDirectory = 'decks';
 const deckExtensionPrefix = '.deck';
 const defaultSlideDelimiter = 'gatsby-slide';
+
+// make sure we have at least one deck in decks/
+exports.onPreBootstrap = ({ reporter }) => {
+  if (!fs.existsSync(deckDirectory)) {
+    const cause = `Could not find the "${deckDirectory}" directory.`;
+    const resolution =
+      'Please create one and make sure it has at least one ".deck.mdx" or ".deck.md" file in it';
+    reporter.panic(`${cause}\n${resolution}`);
+  }
+
+  const deckFiles = fs.readdirSync(deckDirectory).filter(filePath => {
+    const fileName = path.basename(filePath);
+    return (
+      fileName.endsWith(`${deckExtensionPrefix}.md`) ||
+      fileName.endsWith(`${deckExtensionPrefix}.mdx`)
+    );
+  });
+  if (!deckFiles.length) {
+    const cause = `Could not find any deck files in the "${deckDirectory}" directory.`;
+    const resolution =
+      'Please make sure you have at least one ".deck.mdx" or ".deck.md" file';
+    reporter.panic(`${cause}\n${resolution}`);
+  }
+};
 
 /**
  * Extracts  deckSlug and slideNumber from file path, e.g. ../myDeck.4.slide

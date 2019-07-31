@@ -9,23 +9,24 @@ const opaqueLightWhite = `hsla(0, 0%, 100%, 0.2)`;
 const lightGray = `hsla(0, 0%, 0%, 0.2)`;
 
 export default {
-  initialThemeName: 'dark',
-  text: lightWhite,
-  background: grey90,
-  primary: purple30,
-  secondary: lightWhite,
-  muted: opaqueLightWhite,
-  highlight: purple60,
-  heading: white,
+  initialThemeName: 'light',
+  useCustomProperties: true,
+  text: grey90,
+  background: white,
+  primary: purple60,
+  secondary: black80,
+  muted: lightGray,
+  highlight: opaqueLightYellow,
+  heading: grey90,
   modes: {
-    light: {
-      text: grey90,
-      background: white,
-      primary: purple60,
-      secondary: black80,
-      muted: lightGray,
-      highlight: opaqueLightYellow,
-      heading: grey90,
+    dark: {
+      text: lightWhite,
+      background: grey90,
+      primary: purple30,
+      secondary: lightWhite,
+      muted: opaqueLightWhite,
+      highlight: purple60,
+      heading: white,
     },
   },
 };

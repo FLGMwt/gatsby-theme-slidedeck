@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import { Styled, css } from 'theme-ui';
+import { css } from 'theme-ui';
 import Layout from '../components/layout';
 import Menu from '../components/menu';
+import SlideHeader from '../components/slideHeader';
 import useShortcuts from '../utils/useShortcuts';
 
 const ReffableLayout = React.forwardRef((props, ref) => (
@@ -35,9 +36,7 @@ const Slide = ({ data: { mdx } }) => {
             flex: 1,
           }}
         >
-          <Styled.h3 css={{ textAlign: 'right' }}>
-            {title} {slideNumber}/{lastSlide}
-          </Styled.h3>
+          <SlideHeader {...{ title, slideNumber, lastSlide }} />
           <div css={css({ minHeight: 'slideHeight' })}>
             <MDXRenderer>{body}</MDXRenderer>
           </div>
