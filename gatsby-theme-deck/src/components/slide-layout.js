@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
+import { Styled } from 'theme-ui';
 import './global.css';
 
 import useShortcuts from '../utils/useShortcuts';
@@ -26,9 +27,9 @@ export default function PageTemplate({ data: { mdx } }) {
         I don't know CSS too well, probably a better way to do this 😬
       */}
       <div style={{ height: 1 }} />
-      <h1>
+      <Styled.h1>
         {title} - {slideNumber}
-      </h1>
+      </Styled.h1>
       <MDXRenderer>{body}</MDXRenderer>
     </div>
   );

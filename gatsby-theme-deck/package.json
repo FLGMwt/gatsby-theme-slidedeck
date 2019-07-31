@@ -8,12 +8,19 @@
     "gatsby": "^2.6.0"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.14",
     "@mdx-js/mdx": "^1.1.0",
-    "@mdx-js/react": "^1.0.27",
+    "@mdx-js/react": "^1.1.1",
+    "@theme-ui/presets": "^0.2.24",
+    "@theme-ui/prism": "^0.2.23",
     "gatsby-plugin-mdx": "^1.0.17",
     "gatsby-plugin-page-creator": "^2.1.5",
+    "gatsby-plugin-theme-ui": "^0.2.23",
+    "gatsby-remark-prismjs": "^3.3.3",
     "gatsby-source-filesystem": "^2.1.6",
     "gray-matter": "^4.0.2",
-    "react-swipeable": "^5.3.0"
+    "prismjs": "^1.17.1",
+    "react-swipeable": "^5.3.0",
+    "theme-ui": "^0.2.23"
   }
 }

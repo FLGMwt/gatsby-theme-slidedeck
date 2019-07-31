@@ -3,9 +3,9 @@ const path = require('path');
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: [`.slide`],
+        extensions: ['.slide'],
       },
     },
     {
@@ -15,10 +15,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-page-creator`,
+      resolve: 'gatsby-plugin-page-creator',
       options: {
-        path: path.join(__dirname, `src`, `pages`),
+        path: path.join(__dirname, 'src', 'pages'),
       },
     },
+    'gatsby-plugin-theme-ui',
   ],
 };
