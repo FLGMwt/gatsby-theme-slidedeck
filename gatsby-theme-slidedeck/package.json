@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-theme-deck",
+  "name": "gatsby-theme-slidedeck",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Ryan Stelly <ryan@verticalmade.com> (@FLGMwt)",
+  "author": "Ryan Stelly <ryan.stelly@live.com> (@FLGMwt)",
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.6.0"

@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Ryan Stelly <ryan@verticalmade.com> (@FLGMwt)",
+  "author": "Ryan Stelly <ryan.stelly@live.com> (@FLGMwt)",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "gatsby": "^2.13.39",
-    "gatsby-theme-deck": "1.0.0",
+    "gatsby-theme-slidedeck": "1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
