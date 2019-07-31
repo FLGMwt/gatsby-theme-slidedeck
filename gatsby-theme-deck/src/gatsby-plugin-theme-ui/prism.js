@@ -1,7 +1,7 @@
-import prism from '@theme-ui/prism/presets/vs-dark.json';
+import prism from '@theme-ui/prism/presets/prism-solarizedlight.json';
 
 export default {
   ...prism,
-  borderRadius: 10,
+  borderRadius: 16,
   padding: 4,
 };

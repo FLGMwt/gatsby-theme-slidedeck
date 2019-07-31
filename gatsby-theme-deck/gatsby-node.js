@@ -5,7 +5,7 @@ const {
 } = require('gatsby-source-filesystem');
 const grayMatter = require('gray-matter');
 
-const SlideLayout = require.resolve(`./src/components/slide-layout`);
+const SlideTemplate = require.resolve(`./src/templates/slide`);
 
 const deckExtensionPrefix = '.deck';
 const defaultSlideDelimiter = 'gatsby-slide';
@@ -118,7 +118,7 @@ exports.createPages = async ({ graphql, actions }) => {
     result.data.allMdx.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
-        component: SlideLayout,
+        component: SlideTemplate,
         context: { id: node.id },
       });
     });

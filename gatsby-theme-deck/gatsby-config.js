@@ -20,6 +20,7 @@ module.exports = {
         path: path.join(__dirname, 'src', 'pages'),
       },
     },
+    'gatsby-plugin-emotion',
     'gatsby-plugin-theme-ui',
   ],
 };
