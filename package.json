@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-deck-workspace",
+  "name": "gatsby-theme-slidedeck-workspace",
   "private": true,
   "version": "0.0.1",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "build": "yarn workspace example build"
   },
   "workspaces": [
-    "gatsby-theme-deck",
+    "gatsby-theme-slidedeck",
     "example"
   ]
 }

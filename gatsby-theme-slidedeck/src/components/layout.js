@@ -1,6 +1,5 @@
 import React from 'react';
 import { css, Styled, ColorMode } from 'theme-ui';
-// import './global.css';
 import { Global } from '@emotion/core';
 
 const Layout = ({ children, ...props }) => {

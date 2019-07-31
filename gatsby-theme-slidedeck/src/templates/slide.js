@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import { Styled, useColorMode, css } from 'theme-ui';
+import { Styled, css } from 'theme-ui';
 import Layout from '../components/layout';
+import Menu from '../components/menu';
 import useShortcuts from '../utils/useShortcuts';
 
 const ReffableLayout = React.forwardRef((props, ref) => (
@@ -17,8 +18,6 @@ const Slide = ({ data: { mdx } }) => {
   const { deckSlug } = fields;
 
   const touchSwipeHandlers = useShortcuts({ deckSlug, slideNumber, lastSlide });
-  const [colorMode, setColorMode] = useColorMode();
-
   return (
     <ReffableLayout {...touchSwipeHandlers}>
       <div
@@ -43,13 +42,7 @@ const Slide = ({ data: { mdx } }) => {
             <MDXRenderer>{body}</MDXRenderer>
           </div>
         </div>
-        <button
-          onClick={e => {
-            setColorMode(colorMode === 'light' ? 'dark' : 'light');
-          }}
-        >
-          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-        </button>
+        <Menu />
       </div>
     </ReffableLayout>
   );

@@ -40,7 +40,6 @@ const useShortcuts = ({ deckSlug, slideNumber, lastSlide }) => {
     onSwipedRight: () =>
       canPrevious && previousSlide({ deckSlug, slideNumber }),
     preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
   });
 };
 

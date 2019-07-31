@@ -10,6 +10,10 @@ export default {
       ...funk.styles.pre,
       ...prism,
     },
+    button: {
+      ...funk.styles.button,
+      backgroundColor: 'green',
+    },
   },
   sizes: {
     container: 920,
