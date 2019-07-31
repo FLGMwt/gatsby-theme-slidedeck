@@ -2,8 +2,6 @@ import { funk } from '@theme-ui/presets';
 import prism from './prism';
 import colors from './colors';
 
-console.log(funk);
-
 export default {
   ...funk,
   styles: {
